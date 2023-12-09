@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Medieval Civilization Selection</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
     body {
       font-family: 'MedievalFont', serif;
@@ -13,7 +13,6 @@
       color: #f7dfc4;
       margin: 0;
       padding: 0;
-      text-align: center;
     }
 
     .container {
@@ -23,46 +22,77 @@
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
       margin-top: 50px;
+      text-align: center;
     }
 
-    .civilization-image {
+    h1, h2, h3 {
+      color: #FFD700;
+    }
+
+    .civilization-container a {
       border: 5px solid #532c08;
+      display: inline-block;
+      padding: 20px;
+      margin: 20px;
+      text-align: center;
+      text-decoration: none;
       border-radius: 10px;
+    }
+
+    .civilization-container img {
       max-width: 100%;
       height: auto;
-      cursor: pointer;
+      border: 2px solid #8A5C2E;
+      border-radius: 10px;
     }
 
-    .civilization-image:hover {
-      border: 5px solid #ffcc00;
+    .civilization-container h3 {
+      margin-top: 10px;
     }
 
     @font-face {
       font-family: 'MedievalFont';
       src: url('your-medieval-font.woff') format('woff');
     }
+
+    @media screen and (max-width: 768px) {
+      /* Adjust image size for screens up to 768px wide (typical mobile screens) */
+      .civilization-container a {
+        padding: 10px;
+        margin: 10px;
+      }
+
+      .civilization-container img {
+        max-width: 80%; /* Adjust the percentage as needed */
+        height: auto;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h2>Select Your Civilization</h2>
-    <p>Choose your civilization to begin your medieval journey:</p>
+    <h1>Welcome to Medieval Clicker</h1>
+    <h2>Choose Your Civilization</h2>
+    <div class="civilization-container">
+      <!-- Civilization 1: Knight -->
+      <a href="game.html?civilization=knight">
+        <img src="knight.png" alt="Knight Civilization">
+        <h3>Knight</h3>
+      </a>
 
-    <!-- Knight Civilization -->
-    <a href="game_knight.html">
-      <img src="castle_knight.png" alt="Knight Civilization" class="civilization-image">
-    </a>
+      <!-- Civilization 2: Lord -->
+      <a href="game.html?civilization=lord">
+        <img src="lord.png" alt="Lord Civilization">
+        <h3>Lord</h3>
+      </a>
 
-    <!-- Lord Civilization -->
-    <a href="game_lord.html">
-      <img src="castle_lord.png" alt="Lord Civilization" class="civilization-image">
-    </a>
-
-    <!-- Wizard Civilization -->
-    <a href="game_wizard.html">
-      <img src="castle_wizard.png" alt="Wizard Civilization" class="civilization-image">
-    </a>
+      <!-- Civilization 3: Wizard -->
+      <a href="game.html?civilization=wizard">
+        <img src="wizard.png" alt="Wizard Civilization">
+        <h3>Wizard</h3>
+      </a>
+    </div>
   </div>
 </body>
 
