@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,32 +67,48 @@
       }
     }
   </style>
-</head>
 
+  <script>
+    // Function to save the chosen civilization to local storage
+    function saveCivilization(civilization) {
+      localStorage.setItem('chosenCivilization', civilization);
+    }
+
+    // Function to load and redirect if a civilization has already been chosen
+    function loadCivilization() {
+      var chosenCivilization = localStorage.getItem('chosenCivilization');
+      if (chosenCivilization) {
+       window.location.href = `game_${civilization}.html`;
+      }
+    }
+
+    // Call loadCivilization when the page loads
+    window.onload = loadCivilization;
+  </script>
+</head>
 <body>
   <div class="container">
     <h1>Welcome to Medieval Clicker</h1>
     <h2>Choose Your Civilization</h2>
     <div class="civilization-container">
       <!-- Civilization 1: Knight -->
-      <a href="game.html?civilization=knight">
+      <a href="javascript:void(0);" onclick="saveCivilization('knight')">
         <img src="knight.png" alt="Knight Civilization">
         <h3>Knight</h3>
       </a>
 
       <!-- Civilization 2: Lord -->
-      <a href="game.html?civilization=lord">
+      <a href="javascript:void(0);" onclick="saveCivilization('lord')">
         <img src="lord.png" alt="Lord Civilization">
         <h3>Lord</h3>
       </a>
 
       <!-- Civilization 3: Wizard -->
-      <a href="game.html?civilization=wizard">
+      <a href="javascript:void(0);" onclick="saveCivilization('wizard')">
         <img src="wizard.png" alt="Wizard Civilization">
         <h3>Wizard</h3>
       </a>
     </div>
   </div>
 </body>
-
 </html>
